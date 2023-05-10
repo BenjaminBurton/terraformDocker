@@ -37,11 +37,11 @@ Initializing a configuration directory downloads and installs the providers defi
 
 > If you did not deploy the Quick Start steps in the previous tutorial, initialize the directory now.
 
-- $`terraform init`
+ $`terraform init`
 
 # Format and validate the configuration
 
-- $`terraform fmt`
+ $`terraform fmt`
 
  It is recommended to use consistent formatting in all of your configuration files. The `terraform fmt` command automatically updates configurations in the current directory for readability and consistency.
 
@@ -51,25 +51,25 @@ Initializing a configuration directory downloads and installs the providers defi
 
  You can also make sure your configuration is syntactically valid and internally consistent by using the `terraform validate` command.
 
-- $`terraform validate`
+ $`terraform validate`
 
 # Create infrastructure
 
  Apply the configuration now with the `terraform apply` command. Terraform will print output similar to what is shown below. We have truncated some of the output to save space.
 
-- $`terraform apply`
+ $`terraform apply`
 
 # Inspect state
 
  Inspect the current state using `terraform show`
 
-- $`terraform show`
+ $`terraform show`
 
 # Manually Manage State
 
  Terraform has a built-in command called `terraform state` for advanced state management. Use the `list` subcommand to list of the resources in your project's state.
 
-- $`terraform state list`
+ $`terraform state list`
 
 # Update configuration
 
@@ -90,13 +90,13 @@ Initializing a configuration directory downloads and installs the providers defi
 
  After changing the configuration, run `terraform apply` again to see how Terraform will apply this change to the existing resources.
 
-- $`terraform apply`
+ $`terraform apply`
 
 # Destroy Infrastructure
 
  It does not destroy resources running elsewhere that are not managed by the current Terraform project.
 
-- $`terraform destroy`
+ $`terraform destroy`
 
 # Set the container name with a variable
  Create a new file called `variables.tf` with a block defining a new container_name variable.
@@ -127,21 +127,21 @@ resource "docker_container" "nginx" {
 
  Apply the configuration. Respond to the confirmation prompt with a `yes`.
 
-- $`terraform apply`
+ $`terraform apply`
 
  Now apply the configuration again, this time overriding the default container name by passing in a variable using the `-var flag`. Terraform will update the container's name attribute with the new name. Respond to the confirmation prompt with yes.
 
-- $`terraform apply -var "container_name=YetAnotherName"`
+ $`terraform apply -var "container_name=YetAnotherName"`
 
 # Query Data with Outputs
 
  Ensure that your configuration matches this, and that you have initialized your configuration in the terraform-docker-container directory.
 
-- $`terraform init`
+ $`terraform init`
 
  Apply the configuration before continuing this tutorial. Respond to the confirmation prompt with a `yes`.
 
-- $`terraform apply`
+ $`terraform apply`
 
 # Output Docker container configuration
 
@@ -165,17 +165,17 @@ output "image_id" {
 
 You must apply this configuration before you can use these output values. Apply your configuration now. Respond to the confirmation prompt with `yes`.
 
-- $`terraform apply`
+ $`terraform apply`
 
 > Terraform prints output values to the screen when you apply your configuration. Query the outputs with the terraform output command.
 
-- $`terraform output`
+ $`terraform output`
 
 > You can use Terraform outputs to connect your Terraform projects with other parts of your infrastructure, or with other Terraform projects
 
 # Destroy infrastructure
 
-- $`terraform destroy`
+ $`terraform destroy`
 
 ### This is an exapmle now go play around with it 
 
