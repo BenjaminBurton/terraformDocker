@@ -1,6 +1,6 @@
 # Build Infrastructure - Terraform Docker
 
-> Create a file to define your infrastructure.
+ Create a `main.tf` file to define your infrastructure.
 
 ```js
 terraform {
@@ -49,7 +49,7 @@ Initializing a configuration directory downloads and installs the providers defi
 
 > Validate your configuration. The example configuration provided above is valid, so Terraform will return a success message.
 
-> You can also make sure your configuration is syntactically valid and internally consistent by using the terraform validate command.
+ You can also make sure your configuration is syntactically valid and internally consistent by using the `terraform validate` command.
 
 - $`terraform validate`
 
@@ -94,12 +94,12 @@ Initializing a configuration directory downloads and installs the providers defi
 
 # Destroy Infrastructure
 
-> It does not destroy resources running elsewhere that are not managed by the current Terraform project.
+ It does not destroy resources running elsewhere that are not managed by the current Terraform project.
 
 - $`terraform destroy`
 
 # Set the container name with a variable
-> Create a new file called variables.tf with a block defining a new container_name variable.
+ Create a new file called `variables.tf` with a block defining a new container_name variable.
 
 ```js
 variable "container_name" {
@@ -109,7 +109,7 @@ variable "container_name" {
 }
 ```
 
-> In main.tf, update the docker_container resource block to use the new variable. The container_name variable block will default to its default value ("ExampleNginxContainer") unless you declare a different value.
+ In `main.tf`, update the docker_container resource block to use the new variable. The container_name variable block will default to its default value ("ExampleNginxContainer") unless you declare a different value.
 
 ```js
 resource "docker_container" "nginx" {
@@ -129,25 +129,25 @@ resource "docker_container" "nginx" {
 
 - $`terraform apply`
 
-> Now apply the configuration again, this time overriding the default container name by passing in a variable using the -var flag. Terraform will update the container's name attribute with the new name. Respond to the confirmation prompt with yes.
+ Now apply the configuration again, this time overriding the default container name by passing in a variable using the `-var flag`. Terraform will update the container's name attribute with the new name. Respond to the confirmation prompt with yes.
 
 - $`terraform apply -var "container_name=YetAnotherName"`
 
 # Query Data with Outputs
 
-> Ensure that your configuration matches this, and that you have initialized your configuration in the learn-terraform-docker-container directory.
+ Ensure that your configuration matches this, and that you have initialized your configuration in the terraform-docker-container directory.
 
 - $`terraform init`
 
-> Apply the configuration before continuing this tutorial. Respond to the confirmation prompt with a yes.
+ Apply the configuration before continuing this tutorial. Respond to the confirmation prompt with a `yes`.
 
 - $`terraform apply`
 
 # Output Docker container configuration
 
-> Create a file called outputs.tf in your learn-terraform-docker-container directory.
+ Create a file called outputs.tf in your terraform-docker-container directory.
 
-Add the configuration below to outputs.tf to define outputs for your container's ID and the image ID.
+Add the configuration below to `outputs.tf` to define outputs for your container's ID and the image ID.
 
 ```js
 output "container_id" {
