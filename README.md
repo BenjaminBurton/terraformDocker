@@ -31,11 +31,11 @@ resource "docker_container" "nginx" {
 
 # Initialize the directory
 
-> When you create a new configuration — or check out an existing configuration from version control — you need to initialize the directory with `terraform init`.
+ When you create a new configuration — or check out an existing configuration from version control — you need to initialize the directory with `terraform init`.
 
 Initializing a configuration directory downloads and installs the providers defined in the configuration, which in this case is the `docker` provider.
 
-If you did not deploy the Quick Start steps in the previous tutorial, initialize the directory now.
+> If you did not deploy the Quick Start steps in the previous tutorial, initialize the directory now.
 
 - $`terraform init`
 
@@ -43,7 +43,7 @@ If you did not deploy the Quick Start steps in the previous tutorial, initialize
 
 - $`terraform fmt`
 
-> It is recommended to use consistent formatting in all of your configuration files. The `terraform fmt` command automatically updates configurations in the current directory for readability and consistency.
+ It is recommended to use consistent formatting in all of your configuration files. The `terraform fmt` command automatically updates configurations in the current directory for readability and consistency.
 
 > Format your configuration. Terraform will print out the names of the files it modified, if any. In this case, your configuration file was already formatted correctly, so Terraform won't return any file names.
 
@@ -55,19 +55,19 @@ If you did not deploy the Quick Start steps in the previous tutorial, initialize
 
 # Create infrastructure
 
-> Apply the configuration now with the `terraform apply` command. Terraform will print output similar to what is shown below. We have truncated some of the output to save space.
+ Apply the configuration now with the `terraform apply` command. Terraform will print output similar to what is shown below. We have truncated some of the output to save space.
 
 - $`terraform apply`
 
 # Inspect state
 
-> Inspect the current state using `terraform show`
+ Inspect the current state using `terraform show`
 
 - $`terraform show`
 
 # Manually Manage State
 
-> Terraform has a built-in command called `terraform state` for advanced state management. Use the `list` subcommand to list of the resources in your project's state.
+ Terraform has a built-in command called `terraform state` for advanced state management. Use the `list` subcommand to list of the resources in your project's state.
 
 - $`terraform state list`
 
@@ -88,7 +88,7 @@ If you did not deploy the Quick Start steps in the previous tutorial, initialize
 
 # Apply Changes
 
-> After changing the configuration, run `terraform apply` again to see how Terraform will apply this change to the existing resources.
+ After changing the configuration, run `terraform apply` again to see how Terraform will apply this change to the existing resources.
 
 - $`terraform apply`
 
@@ -125,7 +125,7 @@ resource "docker_container" "nginx" {
 
 # Apply configuration
 
-> Apply the configuration. Respond to the confirmation prompt with a `yes`.
+ Apply the configuration. Respond to the confirmation prompt with a `yes`.
 
 - $`terraform apply`
 
