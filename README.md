@@ -177,8 +177,6 @@ You must apply this configuration before you can use these output values. Apply 
 
 > $`terraform destroy`
 
-
-
-
+### This is an exapmle now go play around with it 
 
 
